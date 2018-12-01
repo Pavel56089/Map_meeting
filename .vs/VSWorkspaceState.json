@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\main",
+    "\\mapmeeting",
+    "\\templates"
   ],
+  "SelectedNode": "\\mapmeeting\\urls.py",
   "PreviewInSolutionExplorer": false
 }

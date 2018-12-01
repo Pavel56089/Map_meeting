@@ -1,14 +1,11 @@
 ymaps.ready(init);
-function init(){
-    // Создание карты.
-    var myMap = new ymaps.Map("map", {
-        // Координаты центра карты.
-        // Порядок по умолчнию: «широта, долгота».
-        // Чтобы не определять координаты центра карты вручную,
-        // воспользуйтесь инструментом Определение координат.
-        center: [55.76, 37.64],
-        // Уровень масштабирования. Допустимые значения:
-        // от 0 (весь мир) до 19.
-        zoom: 7
-    });
-}
+        function init() {
+            var map = new ymaps.Map('map', {
+            center: [59.93772, 30.313622],
+            zoom: 10,
+            controls: ['geolocationControl', 'zoomControl']
+        }),
+        firstButton = new ymaps.control.Button("Добавить себя на карту");
+
+    map.controls.add(firstButton, {float: 'right'});
+        }
