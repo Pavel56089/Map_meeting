@@ -3,8 +3,10 @@
     "",
     "\\main",
     "\\mapmeeting",
+    "\\static",
+    "\\static\\js",
     "\\templates"
   ],
-  "SelectedNode": "\\mapmeeting\\urls.py",
+  "SelectedNode": "\\static\\main.css",
   "PreviewInSolutionExplorer": false
 }
