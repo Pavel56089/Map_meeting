@@ -6,16 +6,46 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=<89ca2d3e-67a2-45d4-8e05-e7c1b244c9e0>&lang=ru_RU"
+  type="text/javascript">
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "main.css" %}">
     <script src="{% static "js/main.js" %}" type="text/javascript" >
     </script>
     <title>MapMeeting</title>
-    
+
 </head>
 <body>
+  <script>
+  ymaps.ready(init);
+      function init() {
+          var map = new ymaps.Map('map', {
+          center: [55.75399399999374,37.62209300000001],
+          zoom: 10,
+          controls: ['geolocationControl', 'zoomControl']
+      }),
+      firstButton = new ymaps.control.Button({
+        data: {
+          content:'Добавить себя',
+          image: 'images/error.png'
+        },
+        options: {
+          maxWidth: [30, 100, 150],
+        }
+      });
+  map.controls.add(firstButton, {float: 'right'});
+  
+  map.geoObjects
+  .add(new ymaps.Placemark([55.684758, 37.738521], {
+            balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+        }, {
+            preset: 'islands#icon',
+            iconColor: '#0095b6'
+        }));
+      }
+
+  </script>
     <div id="map" style="height: 100%; "></div>
 </body>
 </html>
