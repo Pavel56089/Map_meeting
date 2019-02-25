@@ -35,15 +35,24 @@
         }
       });
   map.controls.add(firstButton, {float: 'right'});
-  
+
   map.geoObjects
-  .add(new ymaps.Placemark([55.684758, 37.738521], {
-            balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+    {% for student in student_list %}
+  .add(new ymaps.Placemark([{{student.kxInt}}.{{student.kxDecimal}}, {{student.kyInt}}.{{student.kyDecimal}}], {
+                balloonContent: '{{student.name}} <br> Учусь в {{student.group}} классе на {{student.lyceum}}'
+            }, {
+                preset: 'islands#icon',
+                iconColor: '#32cd32'
+            }))
+  {% endfor %}
+
+  .add(new ymaps.Placemark([55.833436, 37.715175], {
+            balloonContent: '<strong>тестовая метка</strong>'
         }, {
-            preset: 'islands#icon',
-            iconColor: '#0095b6'
-        }));
-      }
+            preset: 'islands#dotIcon',
+            iconColor: '#735184'
+        }))
+  }
 
   </script>
     <div id="map" style="height: 100%; "></div>
