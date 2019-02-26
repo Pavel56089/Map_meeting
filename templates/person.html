@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Попутчик {{student.name}}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-  <h1>{{student.name}}</h1>
+  <h3><a href="{{student.vk}}">{{student.name}}</a>, учусь в {{student.group}} классе на {{student.lyceum}}</h3>
   <br>
   <h3>Обо мне:</h3>
   <p>{{student.about}}</p>
