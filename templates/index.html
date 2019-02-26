@@ -27,11 +27,10 @@
       }),
       firstButton = new ymaps.control.Button({
         data: {
-          content:'Добавить себя',
-          image: 'images/error.png'
+          content:'<a href="{% url 'add' %}">Добавить себя</a>'
         },
         options: {
-          maxWidth: [30, 100, 150],
+          maxWidth: [30, 100, 150]
         }
       });
   map.controls.add(firstButton, {float: 'right'});
@@ -39,7 +38,7 @@
   map.geoObjects
     {% for student in student_list %}
   .add(new ymaps.Placemark([{{student.kxInt}}.{{student.kxDecimal}}, {{student.kyInt}}.{{student.kyDecimal}}], {
-                balloonContent: '{{student.name}} <br> Учусь в {{student.group}} классе на {{student.lyceum}}'
+                balloonContent: '<a href="{% url 'detail' student.id %}">{{student.name}}</a> <br> Учусь в {{student.group}} классе на {{student.lyceum}}'
             }, {
                 preset: 'islands#icon',
                 iconColor: '#32cd32'

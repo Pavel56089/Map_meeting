@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Новый попутчик</h1>
+  В поля kx, ky нужно ввести координаты, вы можете узнать их <a href="webmap-blog.ru/tools/getlonglat-ymap2.html" target="_blank">здесь</a>
+      <form method="POST" class="post-form">{% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="save btn btn-default">Готово</button>
+      </form>
+</div>

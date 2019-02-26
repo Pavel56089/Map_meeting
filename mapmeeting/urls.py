@@ -21,5 +21,6 @@ from main import views
 urlpatterns = [
     url(r'^(?P<student_id>[0-9]+)/$', views.detail, name='detail'),
     url(r'^admin/', admin.site.urls),
+    url(r'^add/', views.add, name='add'),
     url(r'^$', views.index),
 ]
